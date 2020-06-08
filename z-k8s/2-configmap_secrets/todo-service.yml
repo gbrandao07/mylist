@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-service
+  namespace: mylist
+data:
+  DOINGSERVICE-ENDPOINT-BASE-PATH: "http://doing-service:8080/mylist/doing"
+  DOINGSERVICE-ENDPOINT-RECEIVE-CARD: "/cards/{id}/receive"
+  CARDSERVICE-ENDPOINT-BASE-PATH: "http://card-service:8080/mylist/cards"
+  CARDSERVICE-ENDPOINT-CREATE-CARD: "/"

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-service
+  namespace: mylist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-service
+  template:
+    metadata:
+      labels:
+        app: todo-service
+        version: v1
+    spec:
+      containers:
+      - image: todo-service:v1
+        name: todo-service
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: todo-service
+        resources:
+          requests:
+            cpu: 50m
+          limits:
+            cpu: 300m
+

@@ -1,0 +1,4 @@
+server:
+  servlet:
+    context-path: /mylist
+  port: 8380

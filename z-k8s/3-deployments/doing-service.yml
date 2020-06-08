@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doing-service
+  namespace: mylist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doing-service
+  template:
+    metadata:
+      labels:
+        app: doing-service
+        version: v1
+    spec:
+      containers:
+      - image: doing-service:v1
+        name: doing-service
+        ports:
+        - containerPort: 8180
+        envFrom:
+        - configMapRef:
+            name: doing-service
+        resources:
+          requests:
+            cpu: 50m
+          limits:
+            cpu: 300m
+  

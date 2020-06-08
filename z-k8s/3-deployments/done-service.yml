@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: done-service
+  namespace: mylist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: done-service
+  template:
+    metadata:
+      labels:
+        app: done-service
+        version: v1
+    spec:
+      containers:
+      - image: done-service:v1
+        name: done-service
+        ports:
+        - containerPort: 8280
+        envFrom:
+        - configMapRef:
+            name: done-service
+        resources:
+          requests:
+            cpu: 50m
+          limits:
+            cpu: 300m
+

@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /mylist
+  port: 8080
+  
+doing-service:
+  endpoints:
+    base-path: ${DOINGSERVICE-ENDPOINT-BASE-PATH:http://localhost:8180/mylist/doing}
+    receive-card: ${DOINGSERVICE-ENDPOINT-RECEIVE-CARD:/cards/{id}/receive}
+
+card-service:
+  endpoints:
+    base-path: ${CARDSERVICE-ENDPOINT-BASE-PATH:http://localhost:8380/mylist/cards}
+    create-card: ${CARDSERVICE-ENDPOINT-CREATE-CARD:/}
