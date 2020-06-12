@@ -15,7 +15,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: doing-service:v1
+      - image: gbrandao/doing-service:v1
         name: doing-service
         ports:
         - containerPort: 8180
@@ -26,5 +26,5 @@ spec:
           requests:
             cpu: 50m
           limits:
-            cpu: 300m
+            cpu: 800m
   

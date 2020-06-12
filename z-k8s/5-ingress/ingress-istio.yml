@@ -14,7 +14,7 @@ spec:
         prefix: /mylist/todo
     route:
     - destination:
-        host: todo-service.mylist.svc.cluster.local
+        host: todo-service #.mylist.svc.cluster.local
         port:
           number: 8080
   - match:
@@ -22,7 +22,7 @@ spec:
         prefix: /mylist/doing
     route:
     - destination:
-        host: doing-service.mylist.svc.cluster.local
+        host: doing-service #.mylist.svc.cluster.local
         port:
           number: 8080
 

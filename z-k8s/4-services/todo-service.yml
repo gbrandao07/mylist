@@ -5,7 +5,8 @@ metadata:
   namespace: mylist
 spec:
   ports:
-  - port: 8080
+  - name: http #sem isso o istio nao funciona no kiali 
+    port: 8080
     protocol: TCP
     targetPort: 8080
   selector:

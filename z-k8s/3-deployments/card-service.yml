@@ -15,7 +15,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: card-service:v1
+      - image: gbrandao/card-service:v1
         name: card-service
         ports:
         - containerPort: 8380
@@ -26,4 +26,4 @@ spec:
           requests:
             cpu: 50m
           limits:
-            cpu: 300m
+            cpu: 800m

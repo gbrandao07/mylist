@@ -15,7 +15,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: todo-service:v1
+      - image: gbrandao/todo-service:v1
         name: todo-service
         ports:
         - containerPort: 8080
@@ -26,5 +26,5 @@ spec:
           requests:
             cpu: 50m
           limits:
-            cpu: 300m
+            cpu: 800m
 
