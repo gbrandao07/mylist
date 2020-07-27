@@ -8,6 +8,6 @@ spec:
   - name: http # the port name is necessary for telemetry in istio/kiali works correctly
     port: 8080
     protocol: TCP
-    targetPort: 333
+    targetPort: 8080
   selector:
     app: webapp-mylist
