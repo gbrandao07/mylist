@@ -8,3 +8,6 @@ data:
   TODOSERVICE-ENDPOINT-RECEIVE-CARD: "/cards/receive"
   DONESERVICE-ENDPOINT-BASE-PATH: "http://done-service:8080/mylist/done"
   DONESERVICE-ENDPOINT-RECEIVE-CARD: "/cards/receive"
+  CARDSERVICE-ENDPOINT-BASE-PATH: "http://card-service:8080/mylist/cards"
+  CARDSERVICE-ENDPOINT-UPDATE-CARD: "/"
+

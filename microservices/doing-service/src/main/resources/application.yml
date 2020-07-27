@@ -12,3 +12,8 @@ done-service:
   endpoints: 
     base-path: ${DONESERVICE-ENDPOINT-BASE-PATH:http://localhost:8280/mylist/done}
     receive-card: ${DONESERVICE-ENDPOINT-RECEIVE-CARD:/cards/receive}
+    
+card-service:
+  endpoints:
+    base-path: ${CARDSERVICE-ENDPOINT-BASE-PATH:http://localhost:8380/mylist/cards}
+    update-card: ${CARDSERVICE-ENDPOINT-UPDATE-CARD:/}    

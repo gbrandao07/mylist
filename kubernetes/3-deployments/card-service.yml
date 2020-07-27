@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: gbrandao/card-service:v1
+        imagePullPolicy: Always
         name: card-service
         ports:
         - containerPort: 8380

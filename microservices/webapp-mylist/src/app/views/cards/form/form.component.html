@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{data.titleWindow}}</h1>
+<div mat-dialog-content>
+  <p>Atributos</p>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.formCardName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Criador</mat-label>
+    <input matInput [(ngModel)]="data.formCardAuthorName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição</mat-label>
+    <input matInput [(ngModel)]="data.formCardDescription">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <div style="display: flex; flex-direction: row;">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="onNoClick()" [ngStyle]="{'visibility': data.showRemoveButton}">Excluir</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  </div>
+</div>

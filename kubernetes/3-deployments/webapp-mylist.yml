@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-mylist
+  namespace: mylist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-mylist
+  template:
+    metadata:
+      labels:
+        app: webapp-mylist
+        version: v1 # istio expects version
+    spec:
+      containers:
+      - image: gbrandao/webapp-mylist:v1
+        imagePullPolicy: Always
+        name: webapp-mylist
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: webapp-mylist
+        resources:
+          requests:
+            cpu: 400m
+          limits:
+            cpu: 1000m
+

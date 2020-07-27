@@ -11,18 +11,10 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /mylist/todo
+        prefix: /mylist
     route:
     - destination:
-        host: todo-service
-        port:
-          number: 8080
-  - match:
-    - uri:
-        prefix: /mylist/doing
-    route:
-    - destination:
-        host: doing-service
+        host: webapp-mylist
         port:
           number: 8080
 

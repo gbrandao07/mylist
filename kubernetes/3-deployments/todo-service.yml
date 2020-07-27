@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: gbrandao/todo-service:v1
+        imagePullPolicy: Always
         name: todo-service
         ports:
         - containerPort: 8080

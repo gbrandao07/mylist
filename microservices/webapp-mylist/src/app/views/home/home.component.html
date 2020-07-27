@@ -1,0 +1,29 @@
+<div id="page-container">
+
+  <div id="content-wrap">
+    <mat-toolbar style="padding: 5px;">
+      <mat-toolbar-row>
+        <span>MyList </span>
+        <mat-icon class="example-icon" style="margin-left: 5px">list</mat-icon>
+        <span class="example-spacer"></span>
+        <button mat-raised-button (click)="openDialog('Novo card', null)">
+          <mat-icon class="example-icon">add</mat-icon> Novo card
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <app-board [cardsInTodo]="cardsInTodo" [cardsInDoing]="cardsInDoing" [cardsInDone]="cardsInDone"  (openFormEvent)="openDialog('Editar card', $event)">
+    </app-board>
+
+  </div>
+
+  <footer id="footer">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span style="width: 100%; text-align: center; font-size: 15px;">© 2020 Copyright: Gustavo Brandão</span>
+        <span class="example-spacer"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </footer>
+
+</div>

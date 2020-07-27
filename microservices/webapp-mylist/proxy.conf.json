@@ -1,0 +1,22 @@
+{
+    "/mylist/todo/cards": {
+       "target": "http://portoseguro1c.mylabserver.com:30080",
+       "secure": false,
+       "logLevel": "debug"
+    },
+    "/mylist/doing/cards": {
+      "target": "http://portoseguro1c.mylabserver.com:30080",
+      "secure": false,
+      "logLevel": "debug"
+    },
+    "/mylist/done/cards": {
+      "target": "http://portoseguro1c.mylabserver.com:30080",
+      "secure": false,
+      "logLevel": "debug"
+    },
+    "/mylist/cards": {
+      "target": "http://portoseguro1c.mylabserver.com:30080",
+      "secure": false,
+      "logLevel": "debug"
+    }
+ }

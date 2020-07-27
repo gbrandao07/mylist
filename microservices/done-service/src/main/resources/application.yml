@@ -2,3 +2,8 @@ server:
   servlet:
     context-path: /mylist
   port: 8280
+  
+card-service:
+  endpoints:
+    base-path: ${CARDSERVICE-ENDPOINT-BASE-PATH:http://localhost:8380/mylist/cards}
+    update-card: ${CARDSERVICE-ENDPOINT-UPDATE-CARD:/}    

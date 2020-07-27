@@ -12,3 +12,4 @@ card-service:
   endpoints:
     base-path: ${CARDSERVICE-ENDPOINT-BASE-PATH:http://localhost:8380/mylist/cards}
     create-card: ${CARDSERVICE-ENDPOINT-CREATE-CARD:/}
+    update-card: ${CARDSERVICE-ENDPOINT-UPDATE-CARD:/}    

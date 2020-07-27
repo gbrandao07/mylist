@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: gbrandao/doing-service:v1
+        imagePullPolicy: Always
         name: doing-service
         ports:
         - containerPort: 8180

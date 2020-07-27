@@ -50,4 +50,8 @@ public class CardService {
 	public Long createInCardServiceApi(Map<String, String> params) {
 		return cardServiceFacade.createCard(params);
 	}
+	
+	public Long updateInCardServiceApi(Map<String, String> params) {
+		return cardServiceFacade.updateCard(params);
+	}
 }

@@ -4,4 +4,5 @@ metadata:
   name: done-service
   namespace: mylist
 data:
-
+  CARDSERVICE-ENDPOINT-BASE-PATH: "http://card-service:8080/mylist/cards"
+  CARDSERVICE-ENDPOINT-UPDATE-CARD: "/"

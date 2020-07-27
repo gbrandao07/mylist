@@ -1,0 +1,80 @@
+<div id="page-container">
+
+  <div cdkDropListGroup style="margin-top: 10px; text-align: center; padding-top: 20px">
+
+    <div class="example-container">
+      <h2>To do</h2>
+
+      <div id="cardsInTodo" cdkDropList [cdkDropListData]="cardsInTodo" class="example-list"
+        (cdkDropListDropped)="drop($event)" style="border: none">
+
+        <div (click)="callParentToOpenForm(item.id, 'todo')" class="example-box" *ngFor="let item of cardsInTodo" cdkDrag
+          style="width: 150px; height: 150px; border: lightblue 2px solid; margin-left: 125px; border-radius: 12px;">
+
+          <img src="https://image.flaticon.com/icons/png/512/264/264955.png" height="30px" width="30px" style="opacity: 0.4;">
+
+          <div style="display: inline-block; width: 150px;">
+            <span
+              style="text-align: center; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 14px; opacity: 0.7;">
+              {{item.cachedName}}
+            </span>
+          </div>
+
+          <span></span>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Doing</h2>
+
+      <div id="cardsInDoing" cdkDropList [cdkDropListData]="cardsInDoing" class="example-list"
+        (cdkDropListDropped)="drop($event)" style="border: none">
+
+        <div (click)="callParentToOpenForm(item.id, 'doing')" class="example-box" *ngFor="let item of cardsInDoing" cdkDrag
+          style="width: 150px; height: 150px; border:lightblue 2px solid; margin-left: 125px; border-radius: 12px;">
+
+          <img src="https://static.thenounproject.com/png/300565-200.png" height="30px" width="30px" style="opacity: 0.4;">
+
+          <div style="display: inline-block; width: 150px;">
+            <span
+              style="text-align: center; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 14px; opacity: 0.7;">
+              {{item.cachedName}}
+            </span>
+          </div>
+
+          <span></span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+
+      <div id="cardsInDone" cdkDropList [cdkDropListData]="cardsInDone" class="example-list"
+        (cdkDropListDropped)="drop($event)" style="border: none">
+
+        <div (click)="callParentToOpenForm(item.id, 'done')" class="example-box" *ngFor="let item of cardsInDone" cdkDrag
+          style="width: 150px; height: 150px; border: lightblue 2px solid; margin-left: 125px; border-radius: 12px;">
+
+          <img src="https://www.pinclipart.com/picdir/big/407-4075143_cours-png-progress-icon-png-clipart.png" height="30px" width="30px" style="opacity: 0.4;">
+
+          <div style="display: inline-block; width: 150px;">
+            <span
+              style="text-align: center; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 14px; opacity: 0.7;">
+              {{item.cachedName}}
+            </span>
+          </div>
+
+          <span></span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

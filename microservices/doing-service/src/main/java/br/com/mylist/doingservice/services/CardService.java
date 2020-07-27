@@ -1,6 +1,7 @@
 package br.com.mylist.doingservice.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.mylist.doingservice.dao.entities.Card;
 import br.com.mylist.doingservice.dao.repositories.CardRepository;
+import br.com.mylist.doingservice.services.external.CardServiceFacade;
 import br.com.mylist.doingservice.services.external.DoneServiceFacade;
 import br.com.mylist.doingservice.services.external.TodoServiceFacade;
 
@@ -23,6 +25,9 @@ public class CardService {
 	
 	@Autowired 
 	private DoneServiceFacade doneServiceFacade;
+	
+	@Autowired
+	private CardServiceFacade cardServiceFacade;
 	
 	public List<Card> getAllCardsInDoingColumn() {
 		return repository.findAll();
@@ -53,5 +58,9 @@ public class CardService {
 			repository.deleteById(id);
 		}
 		return new ResponseEntity<>("Card " + id + " moved to Done column and removed from Doing column succesfully!", HttpStatus.OK);
+	}
+	
+	public Long updateInCardServiceApi(Map<String, String> params) {
+		return cardServiceFacade.updateCard(params);
 	}
 }
