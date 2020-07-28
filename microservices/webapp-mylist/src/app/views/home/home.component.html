@@ -6,13 +6,13 @@
         <span>MyList </span>
         <mat-icon class="example-icon" style="margin-left: 5px">list</mat-icon>
         <span class="example-spacer"></span>
-        <button mat-raised-button (click)="openDialog('Novo card', null)">
-          <mat-icon class="example-icon">add</mat-icon> Novo card
+        <button mat-raised-button (click)="openDialog('New card', null)">
+          <mat-icon class="example-icon">add</mat-icon> New card
         </button>
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <app-board [cardsInTodo]="cardsInTodo" [cardsInDoing]="cardsInDoing" [cardsInDone]="cardsInDone"  (openFormEvent)="openDialog('Editar card', $event)">
+    <app-board [cardsInTodo]="cardsInTodo" [cardsInDoing]="cardsInDoing" [cardsInDone]="cardsInDone"  (openFormEvent)="openDialog('Edit card', $event)">
     </app-board>
 
   </div>

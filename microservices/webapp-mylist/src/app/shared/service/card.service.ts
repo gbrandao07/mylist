@@ -9,8 +9,8 @@ import { Card } from '../model/responses/Card';
 })
 export class CardService {
 
-  // To run locally, replace baseUrl in the methods and start app with 'ng serve --port=333 --proxy-config proxy.conf.json'
-  // baseUrl: string = "/mylist"
+  // nginx server configures proxy to other clusterIp services in k8s
+  baseUrl: string = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port
 
   constructor(
     private httpClient: HttpClient
@@ -18,18 +18,15 @@ export class CardService {
 
   // GET's
   public getAllCardsInTodoColumn(): Observable<CachedCard[]> {
-    //return this.httpClient.get<CachedCard[]>(this.baseUrl + "/todo/cards");
-    return this.httpClient.get<CachedCard[]>("http://todo-service:8080/mylist/todo/cards");
+    return this.httpClient.get<CachedCard[]>(this.baseUrl +"/mylist/todo/cards");
   }
 
   public getAllCardsInDoingColumn(): Observable<CachedCard[]> {
-    //return this.httpClient.get<CachedCard[]>(this.baseUrl + "/doing/cards");
-    return this.httpClient.get<CachedCard[]>("http://doing-service:8080/mylist/doing/cards");
+    return this.httpClient.get<CachedCard[]>(this.baseUrl + "/mylist/doing/cards");
   }
 
   public getAllCardsInDoneColumn(): Observable<CachedCard[]> {
-    //return this.httpClient.get<CachedCard[]>(this.baseUrl + "/done/cards");
-    return this.httpClient.get<CachedCard[]>("http://done-service:8080/mylist/done/cards");
+    return this.httpClient.get<CachedCard[]>(this.baseUrl + "/mylist/done/cards");
   }
 
   // POST's
@@ -38,29 +35,24 @@ export class CardService {
     formData.append("name", name);
     formData.append("authorName", authorName);
     formData.append("description", description);
-    //return this.httpClient.post(this.baseUrl + "/todo/cards", formData, { responseType: "json" } );
-    return this.httpClient.post("http://todo-service:8080/mylist/todo/cards", formData, { responseType: "json" } );
+    return this.httpClient.post(this.baseUrl + "/mylist/todo/cards", formData, { responseType: "json" } );
   }
 
   public moveCardToDoingColumn(cardId: string): Observable<any> {
-    //return this.httpClient.post(this.baseUrl + "/todo/cards/" + cardId + "/move", {}, { responseType: "text" } )
-    return this.httpClient.post("http://todo-service:8080/mylist/todo/cards" + cardId + "/move", {}, { responseType: "text" } )
+    return this.httpClient.post(this.baseUrl + "/mylist/todo/cards/" + cardId + "/move", {}, { responseType: "text" } )
   }
 
   public moveCardToDoneColumn(cardId: string): Observable<any> {
-    //return this.httpClient.post(this.baseUrl + "/doing/cards/" + cardId + "/move?to=done", {}, { responseType: "text" } );
-    return this.httpClient.post("http://doing-service:8080/mylist/doing/cards/" + cardId + "/move?to=done", {}, { responseType: "text" } );
+    return this.httpClient.post(this.baseUrl + "/mylist/doing/cards/" + cardId + "/move?to=done", {}, { responseType: "text" } );
   }
 
   public moveCardToTodoColumn(cardId: string): Observable<any> {
-    //return this.httpClient.post(this.baseUrl + "/doing/cards/" + cardId + "/move?to=todo", {}, { responseType: "text" } );
-    return this.httpClient.post("http://doing-service:8080/mylist/doing/cards/" + cardId + "/move?to=todo", {}, { responseType: "text" } );
+    return this.httpClient.post(this.baseUrl + "/mylist/doing/cards/" + cardId + "/move?to=todo", {}, { responseType: "text" } );
   }
 
   // GET's
   public findCardById(cardId: string): Observable<Card> {
-    //return this.httpClient.get<Card>(this.baseUrl + "/cards/" + cardId, {});
-    return this.httpClient.get<Card>("http://card-service:8080/mylist/cards/" + cardId, {});
+    return this.httpClient.get<Card>(this.baseUrl + "/mylist/cards/" + cardId, {});
   }
 
   // PUT's
@@ -70,7 +62,6 @@ export class CardService {
     formData.append("name", name);
     formData.append("authorName", authorName);
     formData.append("description", description);
-    //return this.httpClient.put(this.baseUrl + "/" + columnName + "/cards", formData, { responseType: "json" } );
-    return this.httpClient.put("http://card-service:8080/mylist/" + columnName + "/cards", formData, { responseType: "json" } );
+    return this.httpClient.put(this.baseUrl + "/mylist/" + columnName + "/cards", formData, { responseType: "json" } );
   }
 }
