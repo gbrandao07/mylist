@@ -8,32 +8,51 @@ O resultado final no frontend permite gerenciar sua lista de pendências para re
 <img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/edit-card.png?raw=true" width="415" height="220" />
 <img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/new-card.png?raw=true" width="415" height="220" />
 
-
 ## Tecnologias
 
-// TODO detalhar as tecnologias
+- Java 8+
+- Maven
+- Spring framework (com starters do Spring boot e Spring Cloud Feign)
+- Docker
+- Kubernetes 
+- Istio
 
 ## Projetos
 
 ### webapp-mylist
 
-// TODO
+Projeto feito com Angular 9 para contemplar o frontend.
 
 ### card-service
 
-// TODO
+Microserviço responsável por consolidar todos os cards cadastrados pelo frontend, independente do estado do card.
 
 ### todo-service
 
-// TODO
+O frontend invoca este serviço para:
+
+- Criar um card que, por sua vez, cria o card no card-service. Após sucesso, o mesmo faz um cache no seu próprio banco de dados.
+O objetivo é ter independência entre os microserviços de forma que, se os outros ficarem indisponíveis, o todo-service consiga exibir os cards na sua coluna.
+
+- Mover um card para 'doing'
+
+- Exibir os cards na coluna 'todo'
 
 ### doing-service
 
-// TODO
+O frontend invoca este serviço para:
+
+- Mover um card para 'done'
+
+- Voltar um card para 'todo'
+
+- Exibir os cards na coluna 'doing'
 
 ### done-service
 
-// TODO
+O frontend invoca este serviço para:
+
+- Exibir os cards na coluna 'doing'
 
 ## Arquitetura
 ![alt text](https://github.com/gbrandao07/mylist/blob/master/utils/imgs/mylist-projects.png?raw=true)
@@ -43,10 +62,4 @@ O resultado final no frontend permite gerenciar sua lista de pendências para re
 ## Service mesh gerada pelo Kiali
 ![alt text](https://github.com/gbrandao07/mylist/blob/master/utils/imgs/service-mesh-live.png?raw=true)
 
-## Requisitos
-
-- JDK 8 ou superior
-- Docker
-- Minikube ou cluster K8s 
-// TODO ...
 
