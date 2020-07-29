@@ -8,6 +8,7 @@ O resultado final no frontend permite gerenciar sua lista de pendências para re
 <img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/edit-card.png?raw=true" width="415" height="220" />
 <img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/new-card.png?raw=true" width="415" height="220" />
 
+
 ## Tecnologias
 
 - Java 8+
@@ -16,6 +17,7 @@ O resultado final no frontend permite gerenciar sua lista de pendências para re
 - Docker
 - Kubernetes 
 - Istio
+
 
 ## Projetos
 
@@ -54,10 +56,10 @@ O frontend invoca este serviço para:
 
 - Exibir os cards na coluna 'doing'
 
+
 ## Arquitetura
 ![alt text](https://github.com/gbrandao07/mylist/blob/master/utils/imgs/mylist-projects.png?raw=true)
 
-// TODO explicar sobre o k8s, istio e relacao entre os projetos
 
 ## Service mesh gerada pelo Kiali
 ![alt text](https://github.com/gbrandao07/mylist/blob/master/utils/imgs/service-mesh-live.png?raw=true)
