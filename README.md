@@ -5,8 +5,8 @@ Também contempla todo o processo de build e configurações necessárias para i
 
 O resultado final no frontend permite gerenciar sua lista de pendências para realizar, vide imagens abaixo:
 ![alt text](https://github.com/gbrandao07/mylist/blob/master/utils/imgs/full-app.png?raw=true)
-<img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/edit-card.png?raw=true" width="503" height="300" />
-<img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/new-card.png?raw=true" width="503" height="300" />
+<img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/edit-card.png?raw=true" width="420" height="215" />
+<img src="https://github.com/gbrandao07/mylist/blob/master/utils/imgs/new-card.png?raw=true" width="420" height="215" />
 
 
 ## Tecnologias
